@@ -1,0 +1,21 @@
+<div class="restaurant-review">
+  <div class="restaurant-name">
+    <h2 class="restaurant-name">店の名前</h2>
+  </div>
+  <ul class="restaurant-review-lists">
+    <li class="restaurant-review-list">
+      <名前>
+      <title>
+      <content>
+      <image>
+    </li>
+    <li class="restaurant-review-list">
+    </li>
+    <li class="restaurant-review-list">
+    </li>
+    <li class="restaurant-review-list">
+    </li>
+  </ul>
+  <link_to "口コミを投稿する", "#">
+  <店舗詳細情報>
+</div>

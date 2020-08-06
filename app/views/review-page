@@ -1,0 +1,20 @@
+<div class="review-post">
+  <div class="post-top">
+    <h2 class="reviewed-restaurant">店の名前</h2>
+  </div>
+  <div class="post-main">
+    <div class="title">
+      <form>
+    </div>
+    <div class="contents">
+      <form>
+    </div>
+    <div class="add-image">
+      <form>
+    </div>
+  </div>
+  <div class="post-bottom">
+    <訪問日>
+    <form>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="restaurant-reservation">
+  <h2 class="restaurant-name">店の名前</h2>
+  <p>日時</p>
+  <form_with>
+    <div class="course">
+      <h3 class="course-title">コースの選択</h3>
+      <form>
+    </div>
+    <div class="personal-information">
+      <h3 class="personal-information-title">
+      <form>
+    </div>
+    <div class="restaurant">
+      <form>
+    </div>
+  < end >
+  <div class="precautions">
+    <h4 class="precautions-title">キャンセルポリシー</h4>
+    <p>本予約をキャンセルされた場合、下記の料金を頂戴いたします</p>
+    <p>当日キャンセル（連絡なし）：5000円（１予約あたり）</p>
+    <p>当日キャンセル（連絡あり）：5000円（同上）</p>
+  </div>
+  <div class="reserve-btn-contents">
+    <p>予約成立後にお店へ連絡なくキャンセルされると、サービスのご利用を制限させていただく場合があります。</p>
+    <%= 日時 %>
+    <form>
+  </div>
+</div>

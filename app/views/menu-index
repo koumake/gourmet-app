@@ -1,0 +1,30 @@
+<div class="menu-lists">
+  <div class="restaurant-name">
+    <h2 class="restaurant-name">店の名前</h2>
+  </div>
+  <ul class="course-lists">
+    <li class="course-list">
+      <div class="course-image">
+        <image>
+      </div>
+      <div class="course-about">
+        <コースの名前>
+        <値段>
+        <予約する>
+      </div>
+    </li>
+  </ul>
+  <ul class="single-drink-lists">
+    <li class="single-drink-list">
+      <商品の名前>
+      <値段>
+    </li>
+  </ul>
+  <ul class="single-food-lists">
+    <li class="single-food-list">
+      <商品の名前>
+      <値段>
+    </li>
+  </ul>
+  <店舗詳細情報>
+</div>

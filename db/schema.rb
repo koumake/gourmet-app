@@ -10,23 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_06_122041) do
-
-  create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2020_08_06_151510) do
 
   create_table "restaurants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "genre", null: false
-    t.string "scene", null: false
-    t.string "date_time", null: false
-    t.bigint "area_id"
+    t.string "name", null: false
+    t.string "name_alias", null: false
+    t.string "tel", null: false
+    t.string "prefecture", default: "0", null: false
+    t.string "city_address", null: false
+    t.string "building_name", null: false
+    t.string "map", null: false
+    t.integer "genre_id", null: false
+    t.integer "reserve_id", null: false
+    t.string "transportation", null: false
+    t.text "hours", null: false
+    t.string "holiday", null: false
+    t.integer "budget_dinner_id", null: false
+    t.integer "budget_lunch_id", null: false
+    t.integer "seats_number"
+    t.string "seats_number_explain"
+    t.integer "private_room_id", null: false
+    t.string "private_room"
+    t.integer "charter_id"
+    t.integer "smoking_id"
+    t.integer "feature_id"
+    t.integer "drink_id"
+    t.integer "food_id"
+    t.string "homepage"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["area_id"], name: "index_restaurants_on_area_id"
   end
 
-  add_foreign_key "restaurants", "areas"
 end

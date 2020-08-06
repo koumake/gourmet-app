@@ -1,0 +1,30 @@
+<div class="restaurant-about">
+  <header>
+  </header>
+  <div class="restaurant-about-main">
+    <div class="restaurant-about-title">
+      <%= 店の名前 %>
+      <p>ジャンル</p>
+      <p>予算</p>
+      <p>定休日</p>
+    </div>
+    <div class="restaurant-about-content">
+      <img>
+      <%= 〇〇な店 %>
+      <ul class="restaurant-informations">
+        <li class="restaurant-feature">
+        </li>
+        <li class="restaurant-course">
+        </li>
+        <li class="restaurant-image">
+        </li>
+        <li class="restaurant-review">
+        </li>
+      </ul>
+      <div class="restaurant-details">
+      </div>
+    </div>
+  </div>
+  <footer>
+  </footer>
+</div>

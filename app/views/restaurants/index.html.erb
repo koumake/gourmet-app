@@ -1,0 +1,77 @@
+
+
+<div class="main">
+  <div class="title-constents">
+    <h2 class="service-title">
+    お店探しはグルメアプリ
+    </h2>
+    <p class="service">
+    掲載店舗数・写真数NO.1
+    </p>
+  </div>
+  <div class="restaurant-search">
+    <div class="input-search">
+      <%= search_form_for @r, url: restaurants_search_path do |f| %>
+        <%= f.search_form_for :about_eq, @restaurants, :name, :name, include_blank: '指定なし' %>
+        <br>
+        <%= f.submit '検索' %>
+      <% end %>
+    </div>
+    <div class="area-search">
+      <h2 class="search-title">
+      エリアから探す
+      </h2>
+      <%= search_form_for @r, url: restaurants_search_path do |f| %>
+        <%= f.collection_select :name_eq, @restaurants, :name, :name, include_blank: '指定なし' %>
+        <br>
+        <%= f.submit '検索' %>
+      <% end %>
+    </div>
+    <div class="genre-search">
+      <h2 class="search-title">
+      ジャンルから探す
+      </h2>
+      <%= search_form_for @r, url: restaurants_search_path do |f| %>
+        <%= f.collection_select :name_eq, @genres, :name, :name, include_blank: '指定なし' %>
+        <br>
+        <%= f.submit '検索' %>
+      <% end %>
+      
+        
+    </div>
+    <div class="scene-search">
+      <h2 class="service-title">
+        利用シーンから探す
+      </h2>
+      <%= search_form_for @r, url: restaurants_search_path do |f| %>
+        <%= f.collection_select :name_eq, @scenes, :name, :name, include_blank: '指定なし' %>
+        <br>
+        <%= f.submit '検索' %>
+      <% end %>
+      
+    </div>
+    <div class="feature-search">
+       <h2 class="service-title">
+        特徴から探す
+       </h2>
+      <%= search_form_for @r, url: restaurants_search_path do |f| %>
+        <%= f.collection_select :name_eq, @features, :name, :name, include_blank: '指定なし' %>
+        <br>
+        <%= f.submit '検索' %>
+      <% end %>
+       
+    </div>
+    <div class="review-search">
+      <ul class="review-lists">
+        <li class="review-list">
+        </li>
+        <li class="review-list">
+        </li>
+        <li class="review-list">
+        </li>
+        <li class="review-list">
+        </li>
+        <li class="review-list">
+        </li>
+      </ul>
+    </div>

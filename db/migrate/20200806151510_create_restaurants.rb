@@ -8,7 +8,8 @@ class CreateRestaurants < ActiveRecord::Migration[6.0]
       t.string :city_address, null: false
       t.string :building_name, null: false
       t.string :map, null: false
-      t.integer :genre_id, null: false
+      t.string :area, null: false
+      t.string :genre, null: false
       t.integer :reserve_id, null: false
       t.string :transportation, null: false
       t.text :hours, null: false
@@ -18,10 +19,11 @@ class CreateRestaurants < ActiveRecord::Migration[6.0]
       t.integer :seats_number
       t.string :seats_number_explain
       t.integer :private_room_id, null: false
-      t.string :private_room
+      t.string :private_room_explain
       t.integer :charter_id
       t.integer :smoking_id
-      t.integer :feature_id
+      t.string :scene, null: false
+      t.string :feature, null: false
       t.integer :drink_id
       t.integer :food_id
       t.string :homepage

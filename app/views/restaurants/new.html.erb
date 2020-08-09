@@ -1,0 +1,108 @@
+<div class="restaurant-resigter">
+  <h2>レストラン新規登録（レストラン情報入力）</h2>
+  <div class="basic-information">
+   <%= form_with url: restaurants_path, method: :post, local: true do |f| %>
+  
+    <div class="restaurant-information">
+      店の名前
+      <%= f.text_area :name %>
+      店の名前（カナ）
+      <%= f.text_area :name_alias %>
+      電話番号
+      <%= f.text_area :tel %>
+    </div>
+    <div class="address-information">
+      都道府県
+      <%= f.text_area :prefecture %>
+      市区町村、番地
+      <%= f.text_area :city_address %>
+      建物名
+      <%= f.text_area :building_name %>
+      地図
+      エリア
+      <%= f.radio_button :area, :"銀座・新橋・有楽町" %>
+      <%= f.radio_button :area, :"池袋" %>
+      <%= f.radio_button :area, :"原宿・表参道・青山" %>
+      <%= f.radio_button :area, :"浜松町・田町・品川" %>
+      <%= f.radio_button :area, :"渋谷・恵比寿・代官山" %>
+      <%= f.radio_button :area, :"六本木・麻布・広尾" %>
+      <%= f.radio_button :area, :"上野・浅草・日暮里" %>
+      <%= f.radio_button :area, :"新宿・代々木・大久保" %>
+      <%= f.radio_button :area, :"赤坂・永田町・溜池" %>
+      <%= f.radio_button :area, :"目黒・白金・五反田" %>
+      <%= f.radio_button :area, :"吉祥寺・三鷹" %>
+      <%= f.radio_button :area, :"町田・稲城" %>
+    </div>
+    <div class="gunre-information">
+      <%= f.radio_button :genre, :"焼肉" %>
+      <%= f.radio_button :genre, :"寿司" %>
+      <%= f.radio_button :genre, :"居酒屋" %>
+      <%= f.radio_button :genre, :"イタリアン" %>
+      <%= f.radio_button :genre, :"中華料理" %>
+      <%= f.radio_button :genre, :"カフェ" %>
+      <%= f.radio_button :genre, :"和食" %>
+      <%= f.radio_button :genre, :"フレンチ" %>
+      <%= f.radio_button :genre, :"韓国料理" %>
+      <%= f.radio_button :genre, :"スイーツ" %>
+      
+    </div>
+  </div>
+  <div class="detail-information">
+    <div class="reservation-information">
+      予約について
+      <%= f.collection_select(:reserve_id, Reserve.all, :id, :name) %>
+    </div>
+    <div class="traffic-hours-holiday-information">
+      交通経路
+      <%= f.text_area :transportation %>
+      営業時間
+      <%= f.text_area :hours %>
+      定休日
+      <%= f.text_area :holiday %>
+      
+    </div>
+    <div class="bugget-information">
+      予算（夜）
+      <%= f.collection_select(:budget_dinner_id, BudgetDinner.all, :id, :name) %>
+      予算（昼）
+      <%= f.collection_select(:budget_lunch_id, BudgetLunch.all, :id, :name) %>
+    </div>
+    <div class="seat-facility-information">
+      座席数
+      <%= f.text_area :seats_number, placeholder:"数字のみ" %>
+      <%= f.text_area :seats_number_explain, placeholder:"席の概要" %>
+      個室
+      <%= f.collection_select(:private_room_id, PrivateRoom.all, :id, :name)%>
+      <%= f.text_area :private_room_explain, placeholder:"個室の概要" %>
+      貸切
+      <%= f.collection_select(:charter_id, Charter.all, :id, :name)%>
+      喫煙禁煙
+      <%= f.collection_select(:smoking_id, Smoking.all, :id, :name)%>
+    </div>
+    <div class="menu-information">
+      ドリンクメニュー
+      <%= f.collection_select(:drink_id, Drink.all, :id, :name)%>
+      フードメニュー
+      <%= f.collection_select(:food_id, Food.all, :id, :name)%>
+    </div>
+    <div class="feature-information">
+      利用シーン
+      <%= f.label :scene %>
+      <% ["初デート", "彼女の誕生日", "記念日", "合コン"].each do |scene| %>
+      <%= f.check_box :scene, {multiple: true}, scene, nil %>
+      <%= scene %>
+      <% end %>
+
+      店の特徴
+      <%= f.label :feature %>
+      <% ["初デートにオススメ", "お手頃だけどお洒落", "お手頃なイタリアン", "個室がある", "学生にオススメ", "カップルシートがある", "お洒落な空間", "喫煙可", "夜景がキレイ"].each do |feature|%>
+      <%= f.check_box :feature, {multiple: true}, feature, nil %>
+      <%= feature %>
+      <% end %>
+    </div>
+  </div>
+  <div class="btn-contents">
+    <%= f.submit "投稿する" %>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,84 @@
+<div class="search-result">
+  <div class="search-result-main">
+    <h2 class="search-keyward">
+      〇〇なお店
+    </h2>
+    <% if @area_results.length !=0 %>
+     <% @area_results.each do |area_result|%>
+      <td>
+      <br>
+      <li class="search-restaurant">
+        <div class="title">
+          <%= link_to 'area_result.name', restaurant_path(area_result.id)%>
+        </div>
+        <div class="content">
+          <%= area_result.about %>
+          <%= link_to "口コミ", "#" %>
+        </div>
+        <div class="reservation">
+        </div>
+      </li>
+     <% end %>
+    <% end %>
+    <% if @genre_results.length !=0 %>
+     <% @genre_results.each do |genre_result|%>
+      <td>
+      <br>
+      <li class="search-restaurant">
+        <div class="title">
+          <%= link_to 'genre_result.name', restaurant_path(genre_result.id) %>
+        </div>
+        <div class="content">
+          <%= genre_result.about %>
+          <%= link_to "口コミ", "#" %>
+        </div>
+        <div class="reservation">
+        </div>
+      </li>
+     <% end %>
+    <% end %>
+    <% if @scene_results.length !=0 %>
+     <% @scene_results.each do |scene_result|%>
+      <td>
+      <br>
+      <li class="search-restaurant">
+        <div class="title">
+          <%= link_to 'scene_result.name', restaurant_path(scene_result.id)%>
+        </div>
+        <div class="content">
+          <%= scene_result.about %>
+          <%= link_to "口コミ", "#" %>
+        </div>
+        <div class="reservation">
+        </div>
+      </li>
+     <% end %>
+    <% end %>
+    <% if @feature_results.length !=0 %>
+     <% @feature_results.each do |feature_result|%>
+      <td>
+      <br>
+      <li class="search-restaurant">
+        <div class="title">
+          <%= link_to 'feature_result.name', restaurant_path(feature_result.id)%>
+        </div>
+        <div class="content">
+          <%= feature_result.about %>
+          <%= link_to "口コミ", "#" %>
+        </div>
+        <div class="reservation">
+        </div>
+      </li>
+     <% end %>
+    <% end %>
+  </div>
+  <footer class="search-result-footer">
+    <ul class="menu">
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">グルメ利用規約</a></li>
+      <li><a href="#">特定商取引に関する表記</a></li>
+    </ul>
+  </footer>
+
+
+</div>

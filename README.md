@@ -36,7 +36,7 @@ Things you may want to cover:
 - has_many :reviews
 
 
-## reservations　テーブル
+## reservations テーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
 |date_time|string|null: false|

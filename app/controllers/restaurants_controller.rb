@@ -9,6 +9,7 @@ class RestaurantsController < ApplicationController
   end
   def create
     @restaurant = Restaurant.new(restaurant_params)
+    @restaurant.save
     
   end
   def show
@@ -35,7 +36,7 @@ class RestaurantsController < ApplicationController
 
   private
   def restaurant_params
-    params.permit(:name, :name_alias, :tel, :prefecture, :city_address, :building_name, :map, :reserve_id, :transportation, :hours, :holiday, :budget_dinner_id, :budget_lunch_id, :seats_number, :seats_number_explain, :private_room_id, :private_room_explain, :charter_id, :smoking_id, :drink_id, :food_id, :homepage, :area, :genre, scene: [], feature: [])
+    params.require(:restaurant).permit(:name, :name_alias, :tel, :prefecture, :city_address, :building_name, :map, :reserve_id, :transportation, :hours, :holiday, :budget_dinner_id, :budget_lunch_id, :seats_number, :seats_number_explain, :private_room_id, :private_room_explain, :charter_id, :smoking_id, :drink_id, :food_id, :homepage, :area, :genre, scene: [], feature: [])
   end
   def search_restaurant
     @r = Restaurant.ransack(params[:q])

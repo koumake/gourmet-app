@@ -7,7 +7,7 @@ class CreateRestaurants < ActiveRecord::Migration[6.0]
       t.string :prefecture, null: false, default: 0
       t.string :city_address, null: false
       t.string :building_name, null: false
-      t.string :map, null: false
+      t.string :map
       t.string :area, null: false
       t.string :genre, null: false
       t.integer :reserve_id, null: false

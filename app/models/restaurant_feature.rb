@@ -1,0 +1,3 @@
+class RestaurantFeature < ApplicationRecord
+
+end

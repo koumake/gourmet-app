@@ -10,13 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_08_104407) do
-
-  create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2020_08_11_132127) do
 
   create_table "features", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -30,25 +24,34 @@ ActiveRecord::Schema.define(version: 2020_08_08_104407) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "restaurant_features", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "restaurant_scenes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "restaurants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "name_alias", null: false
     t.string "tel", null: false
+    t.text "about", null: false
     t.string "prefecture", default: "0", null: false
     t.string "city_address", null: false
     t.string "building_name", null: false
-    t.string "map"
-    t.string "area", null: false
     t.string "genre", null: false
-    t.integer "reserve_id", null: false
-    t.string "transportation", null: false
-    t.text "hours", null: false
-    t.string "holiday", null: false
-    t.integer "budget_dinner_id", null: false
-    t.integer "budget_lunch_id", null: false
+    t.integer "reserve_id"
+    t.string "transportation"
+    t.text "hours"
+    t.string "holiday"
+    t.integer "budget_dinner_id"
+    t.integer "budget_lunch_id"
     t.integer "seats_number"
     t.string "seats_number_explain"
-    t.integer "private_room_id", null: false
+    t.integer "private_room_id"
     t.string "private_room_explain"
     t.integer "charter_id"
     t.integer "smoking_id"

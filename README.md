@@ -64,7 +64,7 @@ Things you may want to cover:
 |city_address|string|null: false|
 |building_name|string|
 |map|string|null: false|
-|genre_id|integer|null: false|
+|genre|string|null: false|
 |reserve_id|integer|null: false|
 |transportation|string|null: false|
 |hours|text|null: false|
@@ -77,7 +77,8 @@ Things you may want to cover:
 |private_room|string|
 |charter_id|integer|
 |smoking_id|integer|
-|feature_id|integer|
+|scene|string|null: false|
+|feature|string|null: false|
 |drink_id|integer|
 |food_id|integer|
 |homepage|string|

@@ -11,54 +11,37 @@
   </div>
   <div class="restaurant-search">
     <div class="input-search">
-      <%= search_form_for @r, url: restaurants_search_path do |f| %>
-        <%= f.search_form_for :about_eq, @restaurants, :name, :name, include_blank: '指定なし' %>
+      <%= search_form_for @p, url: search_restaurants_path do |f| %>
+        <%= f.label :about_cont, '入力欄' %>
+        <%= f.search_field :about_cont %>
         <br>
         <%= f.submit '検索' %>
-      <% end %>
-    </div>
-    <div class="area-search">
-      <h2 class="search-title">
-      エリアから探す
-      </h2>
-      <%= search_form_for @r, url: restaurants_search_path do |f| %>
-        <%= f.collection_select :name_eq, @restaurants, :name, :name, include_blank: '指定なし' %>
+        <h2 class="search-title">
+         ジャンルから探す
+        </h2>
+        <%= f.label :genre_eq, 'ジャンルから探す'%>
+        <%= f.collection_select :genre_eq, @restaurant_genre, :genre, :genre, include_blank: '指定なし' %>
         <br>
         <%= f.submit '検索' %>
-      <% end %>
-    </div>
-    <div class="genre-search">
-      <h2 class="search-title">
-      ジャンルから探す
-      </h2>
-      <%= search_form_for @r, url: restaurants_search_path do |f| %>
-        <%= f.collection_select :name_eq, @genres, :name, :name, include_blank: '指定なし' %>
-        <br>
-        <%= f.submit '検索' %>
-      <% end %>
-      
-        
-    </div>
-    <div class="scene-search">
-      <h2 class="service-title">
+        <h2 class="service-title">
         利用シーンから探す
-      </h2>
-      <%= search_form_for @r, url: restaurants_search_path do |f| %>
-        <%= f.collection_select :name_eq, @scenes, :name, :name, include_blank: '指定なし' %>
+        </h2>
+        <%= f.label :scene_cont, '利用シーンから探す'%>
+        <%= f.collection_select :scene_cont, @restaurant_scene, :scene, :scene, include_blank: '指定なし' %>
         <br>
         <%= f.submit '検索' %>
-      <% end %>
-      
-    </div>
-    <div class="feature-search">
-       <h2 class="service-title">
+        <h2 class="service-title">
         特徴から探す
-       </h2>
-      <%= search_form_for @r, url: restaurants_search_path do |f| %>
-        <%= f.collection_select :name_eq, @features, :name, :name, include_blank: '指定なし' %>
+        </h2>
+        <%= f.label :feature_cont, '特徴から探す'%>
+        <%= f.collection_select :feature_cont, @restaurant_feature, :feature, :feature, include_blank: '指定なし' %>
         <br>
         <%= f.submit '検索' %>
       <% end %>
+    </div>
+  </div>
+  
+    
        
     </div>
     <div class="review-search">

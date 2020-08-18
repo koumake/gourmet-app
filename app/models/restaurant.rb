@@ -8,14 +8,6 @@ class Restaurant < ApplicationRecord
   belongs_to_active_hash :smoking
   belongs_to_active_hash :drink
   belongs_to_active_hash :food
-  def self.search(search)
-    if search
-        Restaurant.where('about LIKE(?)', "%#{search}%")
-        
-    else
-        Restaurant.all
-        
-    end
-    
-  end
+  
+  belongs_to :user
 end

@@ -1,7 +1,7 @@
 <div class="restaurant-resigter">
   <h2>レストラン新規登録（レストラン情報入力）</h2>
   <div class="basic-information">
-   <%= form_with model: @restaurant, url: restaurants_path, method: :post, local: true do |f| %>
+   <%= form_with model: @restaurant, url: restaurants_path, local: true do |f| %>
   
     <div class="restaurant-information">
       店の名前
@@ -10,6 +10,8 @@
       <%= f.text_area :name_alias %>
       電話番号
       <%= f.text_area :tel %>
+      店の情報
+      <%= f.text_area :about %>
     </div>
     <div class="address-information">
       都道府県
@@ -20,30 +22,21 @@
       <%= f.text_area :building_name %>
       地図
       エリア
-      <label><%= f.radio_button :area, :"銀座・新橋・有楽町" %> 銀座・新橋・有楽町 </label>
-      <label><%= f.radio_button :area, :"池袋" %> 池袋 </label>
-      <label><%= f.radio_button :area, :"原宿・表参道・青山" %> 原宿・表参道・青山 </label>
-      <label><%= f.radio_button :area, :"浜松町・田町・品川" %> 浜松町・田町・品川 </label>
-      <label><%= f.radio_button :area, :"渋谷・恵比寿・代官山" %> 渋谷・恵比寿・代官山 </label>
-      <label><%= f.radio_button :area, :"六本木・麻布・広尾" %> 六本木・麻布・広尾 </label>
-      <label><%= f.radio_button :area, :"上野・浅草・日暮里" %> 上野・浅草・日暮里 </label>
-      <label><%= f.radio_button :area, :"新宿・代々木・大久保" %> 新宿・代々木・大久保 </label>
-      <label><%= f.radio_button :area, :"赤坂・永田町・溜池" %> 赤坂・永田町・溜池 </label>
-      <label><%= f.radio_button :area, :"目黒・白金・五反田" %> 目黒・白金・五反田 </label>
-      <label><%= f.radio_button :area, :"吉祥寺・三鷹" %> 吉祥寺・三鷹 </label>
-      <label><%= f.radio_button :area, :"町田・稲城" %> 町田・稲城 </label>
+      
+      
+      
     </div>
     <div class="gunre-information">
-      <label><%= f.radio_button :genre, :"焼肉" %> 焼肉 </label>
-      <label><%= f.radio_button :genre, :"寿司" %> 寿司 </label>
-      <label><%= f.radio_button :genre, :"居酒屋" %> 居酒屋 </label>
-      <label><%= f.radio_button :genre, :"イタリアン" %> イタリアン </label>
-      <label><%= f.radio_button :genre, :"中華料理" %> 中華料理 </label>
-      <label><%= f.radio_button :genre, :"カフェ" %> カフェ </label>
-      <label><%= f.radio_button :genre, :"和食" %> 和食 </label>
-      <label><%= f.radio_button :genre, :"フレンチ" %> フレンチ </label>
-      <label><%= f.radio_button :genre, :"韓国料理" %> 韓国料理 </label>
-      <label><%= f.radio_button :genre, :"スイーツ" %> スイーツ </label>
+      <label><%= f.radio_button :genre, "焼肉" %> 焼肉 </label>
+      <label><%= f.radio_button :genre, "寿司" %> 寿司 </label>
+      <label><%= f.radio_button :genre, "居酒屋 "%> 居酒屋 </label>
+      <label><%= f.radio_button :genre, "イタリアン" %> イタリアン </label>
+      <label><%= f.radio_button :genre, "中華料理" %> 中華料理 </label>
+      <label><%= f.radio_button :genre, "カフェ" %> カフェ </label>
+      <label><%= f.radio_button :genre, "和食" %> 和食 </label>
+      <label><%= f.radio_button :genre, "フレンチ" %> フレンチ </label>
+      <label><%= f.radio_button :genre, "韓国料理" %> 韓国料理 </label>
+      <label><%= f.radio_button :genre, "スイーツ" %> スイーツ </label>
       
     </div>
   </div>
@@ -86,19 +79,22 @@
       <%= f.collection_select(:food_id, Food.all, :id, :name)%>
     </div>
     <div class="feature-information">
-      利用シーン
-      <%= f.label :scene %>
-      <% ["初デート", "彼女の誕生日", "記念日", "合コン"].each do |scene| %>
-      <%= f.check_box :scene, {multiple: true}, scene, nil %>
-      <%= scene %>
-      <% end %>
-
+      利用シーン 
+      <label><%= f.radio_button :scene, "初デート" %> 初デート </label>
+      <label><%= f.radio_button :scene, "彼女の誕生日" %> 彼女の誕生日 </label>
+      <label><%= f.radio_button :scene, "記念日" %> 記念日 </label>
+      <label><%= f.radio_button :scene, "合コン" %> 合コン </label>
       店の特徴
-      <%= f.label :feature %>
-      <% ["初デートにオススメ", "お手頃だけどお洒落", "お手頃なイタリアン", "個室がある", "学生にオススメ", "カップルシートがある", "お洒落な空間", "喫煙可", "夜景がキレイ"].each do |feature|%>
-      <%= f.check_box :feature, {multiple: true}, feature, nil %>
-      <%= feature %>
-      <% end %>
+      
+      <label><%= f.radio_button :feature, "初デートにオススメ" %> 初デートにオススメ </label>
+      <label><%= f.radio_button :feature, "お手頃だけどお洒落" %> お手頃だけどお洒落 </label>
+      <label><%= f.radio_button :feature, "お手頃なイタリアン" %> お手頃なイタリアン </label>
+      <label><%= f.radio_button :feature, "個室がある" %> 個室がある </label>
+      <label><%= f.radio_button :feature, "学生にオススメ" %> 学生にオススメ </label>
+      <label><%= f.radio_button :feature, "カップルシートがある" %> カップルシートがある </label>
+      <label><%= f.radio_button :feature, "お洒落な空間" %> お洒落な空間 </label>
+      <label><%= f.radio_button :feature, "喫煙可能" %> 喫煙可能 </label>
+      <label><%= f.radio_button :feature, "夜景がキレイ" %> 夜景がキレイ </label>
     </div>
   </div>
   <div class="btn-contents">

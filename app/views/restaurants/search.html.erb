@@ -12,7 +12,7 @@
           <%= link_to result.name, "#"%>
         </div>
         <div class="content">
-          <%= image_tag result.image.variant(resize:'500x500'), class: 'message-image' if message.image.attached? %>
+          <%= image_tag result.image.variant(resize:'500x500'), class: 'message-image' if result.image.attached? %>
           <%= result.about %>
           <%= link_to "口コミ", "#" %>
         </div>

@@ -9,5 +9,5 @@ class Restaurant < ApplicationRecord
   belongs_to_active_hash :drink
   belongs_to_active_hash :food
   
-  belongs_to :user
+  belongs_to :user, optional: true
 end

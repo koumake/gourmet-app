@@ -25,8 +25,9 @@ class CreateRestaurants < ActiveRecord::Migration[6.0]
       t.string :feature, null: false
       t.integer :drink_id
       t.integer :food_id
+      
       t.string :homepage
-
+    
       t.timestamps
     end
   end

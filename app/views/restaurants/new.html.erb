@@ -12,6 +12,10 @@
       <%= f.text_area :tel %>
       店の情報
       <%= f.text_area :about %>
+      <label class="form-image">
+      <span class="image-file">画像</span>
+      <%= f.file_field :image, class: 'hidden' %>
+      </label>
     </div>
     <div class="address-information">
       都道府県

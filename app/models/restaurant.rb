@@ -10,4 +10,6 @@ class Restaurant < ApplicationRecord
   belongs_to_active_hash :food
   
   belongs_to :user, optional: true
+  has_one_attached :image
+
 end

@@ -29,7 +29,6 @@ Things you may want to cover:
 |email|string|null: false|
 |password|string|null: false|
 |nickname|string|null: false|
-|icon|string|null: false|
 ### Association
 - has_many :reservations
 - has_many :restaurants
@@ -41,7 +40,6 @@ Things you may want to cover:
 | -------- | ------ | ----------- |
 |date_time|string|null: false|
 |number|string|null: false|
-|course_id|integer|null: false|
 |firstname|string|null: false|
 |lastname|string|null: false|
 |firstname_alias|string|null: false|
@@ -82,21 +80,11 @@ Things you may want to cover:
 |drink_id|integer|
 |food_id|integer|
 |homepage|string|
-### Association
-- has_many :users
-- has_many :reservations
-- has_many :reviews
-
-
-## restaurant_users テーブル
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-|user|references|null: false, foreign_key: true|
-|restaurant|references|null: false, foreign_key: ture|
+|user|references|foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :restaurant
-
+- has_many :reservations
+- has_many :reviews
 
 
 ## reviews テーブル
@@ -104,7 +92,7 @@ Things you may want to cover:
 | -------- | ------ | ----------- |
 |title|string|null: false|
 |content|text|null: false|
-|img|string|
+||string|
 |visit_day|string|
 ### Association
 - belongs_to :user

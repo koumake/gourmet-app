@@ -3,22 +3,28 @@
   </header>
   <div class="restaurant-about-main">
     <div class="restaurant-about-title">
-      <p>店の名前</p>
-      <p>ジャンル</p>
-      <p>予算</p>
-      <p>定休日</p>
+      <%= @restaurant.name %>
+      店のジャンル
+      <%= @restaurant.genre %>
+      ディナーの予算
+      <%= @restaurant.budget_dinner_id %>
+      ランチの予算
+      <%= @restaurant.budget_lunch_id %>
+      定休日
+      <%= @restaurant.holiday %>
     </div>
     <div class="restaurant-about-content">
-      <img>
-      <p>店</p>
+         
+      <p>店について</p>
       <ul class="restaurant-informations">
         <li class="restaurant-feature">
-        </li>
-        <li class="restaurant-course">
+          <%= @restaurant.feature %>
         </li>
         <li class="restaurant-image">
+          <%= image_tag @restaurant.image.variant(resize:'500x500'), class: 'message-image' if @restaurant.image.attached? %>
         </li>
         <li class="restaurant-review">
+          <%#= @口コミ一覧. %>
         </li>
       </ul>
       <div class="restaurant-details">

@@ -9,7 +9,7 @@
       <br>
       <li class="search-restaurant">
         <div class="title">
-          <%= link_to result.name, "#"%>
+          <%= link_to result.name, restaurant_path(result) %>
         </div>
         <div class="content">
           <%= image_tag result.image.variant(resize:'500x500'), class: 'message-image' if result.image.attached? %>

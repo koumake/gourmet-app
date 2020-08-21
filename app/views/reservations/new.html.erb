@@ -1,0 +1,38 @@
+<div class="restaurant-reservation">
+  <h2 class="restaurant-name">
+    <%= @restaurant.name %>
+  </h2>
+  
+  <%= form_with model: [ @restaurant, @reservation ], url: restaurant_reservations_path, local: true do |f|%>
+    <div class="personal-information">
+      <span>来店日</span>
+      <%= f.label :date_time %>
+      <%= f.datetime_select :date_time %>
+      <span>人数</span>
+      <%= f.text_area :number, placeholder:"例（3人）"%>
+      <span>姓</span>
+      <%= f.text_area :lastname %>
+      <span>名</span>
+      <%= f.text_area :firstname %>
+      <span>姓（カナ）</span>
+      <%= f.text_area :lastname_kana %>
+      <span>名（カナ）</span>
+      <%= f.text_area :firstname_kana %>
+      <span>要望</span>
+      <%= f.text_area :request %>
+      <%= f.submit "予約する" %>
+    </div>
+      
+  <% end %>
+  <div class="precautions">
+    <h4 class="precautions-title">キャンセルポリシー</h4>
+    <p>本予約をキャンセルされた場合、下記の料金を頂戴いたします</p>
+    <p>当日キャンセル（連絡なし）：5000円（１予約あたり）</p>
+    <p>当日キャンセル（連絡あり）：5000円（同上）</p>
+  </div>
+  <div class="reserve-btn-contents">
+    <p>予約成立後にお店へ連絡なくキャンセルされると、サービスのご利用を制限させていただく場合があります。</p>
+    
+    <form>
+  </div>
+</div>

@@ -92,7 +92,6 @@ Things you may want to cover:
 | -------- | ------ | ----------- |
 |title|string|null: false|
 |content|text|null: false|
-||string|
 |visit_day|string|
 ### Association
 - belongs_to :user

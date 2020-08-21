@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_150551) do
+ActiveRecord::Schema.define(version: 2020_08_21_074302) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -82,6 +82,18 @@ ActiveRecord::Schema.define(version: 2020_08_19_150551) do
     t.index ["user_id"], name: "index_restaurants_on_user_id"
   end
 
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "content", null: false
+    t.string "visit_day"
+    t.bigint "user_id"
+    t.bigint "restaurant_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "nickname", null: false
@@ -99,4 +111,6 @@ ActiveRecord::Schema.define(version: 2020_08_19_150551) do
   add_foreign_key "reservations", "restaurants"
   add_foreign_key "reservations", "users"
   add_foreign_key "restaurants", "users"
+  add_foreign_key "reviews", "restaurants"
+  add_foreign_key "reviews", "users"
 end

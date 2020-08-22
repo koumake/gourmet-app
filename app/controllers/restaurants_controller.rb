@@ -7,10 +7,10 @@ class RestaurantsController < ApplicationController
   end
   def new
     @restaurant = Restaurant.new
+    @restaurants = Restaurant.all
   end
   def create
     @restaurant = Restaurant.new(restaurant_params)
-   
     if @restaurant.save
       
       redirect_to root_path
@@ -41,7 +41,7 @@ class RestaurantsController < ApplicationController
 
   private
   def restaurant_params
-    params.require(:restaurant).permit(:name, :image, :name_alias, :tel, :about, :prefecture, :city_address, :building_name,  :reserve_id, :transportation, :hours, :holiday, :budget_dinner_id, :budget_lunch_id, :seats_number, :seats_number_explain, :private_room_id, :private_room_explain, :charter_id, :smoking_id, :drink_id, :food_id, :homepage, :genre, :scene, :feature, menus: [] ).merge(user_id: current_user.id)
+    params.require(:restaurant).permit(:name, :image, :name_alias, :tel, :about, :prefecture, :city_address, :building_name,  :reserve_id, :transportation, :hours, :holiday, :budget_dinner_id, :budget_lunch_id, :seats_number, :seats_number_explain, :private_room_id, :private_room_explain, :charter_id, :smoking_id, :drink_id, :food_id, :homepage, :genre, :scene, :feature, :area, menus: [] ).merge(user_id: current_user.id)
   end
   def search_restaurant
     @p = Restaurant.ransack(params[:q])

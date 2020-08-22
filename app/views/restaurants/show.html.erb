@@ -24,7 +24,11 @@
           <%= image_tag @restaurant.image.variant(resize:'500x500'), class: 'message-image' if @restaurant.image.attached? %>
         </li>
         <li class="restaurant-review">
-          <%#= @口コミ一覧. %>
+          <%= link_to "口コミを投稿する", " /restaurants/#{@restaurant.id}/reviews/new" %>
+          <% @reviews.each do |review| %>
+          <%= render partial: "reviews/review", locals: {review: review} %>
+          <% end %>
+          
         </li>
       </ul>
       <div class="restaurant-details">

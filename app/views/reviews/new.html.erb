@@ -6,23 +6,18 @@
   </div>
   <div class="post-main">
     <%= form_with(model: [@restaurant, @review], local: true) do |f| %>
-        <%= f.text_field :title %>
-        <%= f.text_area :content, placeholder: "コメントする", rows: "2" %>
-        <%= f.file_field :image %>
+        <div class="review-title">
+          <%= f.text_field :title, placeholder: "タイトル" %>
+        </div>
+        <div class="review-content">  
+          <%= f.text_area :content, placeholder: "コメントする", rows: "2" %>
+        </div>
+        <div class="review-image">
+          <%= f.file_field :image %>
+        </div>
         <%= f.submit "口コミを投稿" %>
       <% end %>
-    <div class="title">
-      <form>
-    </div>
-    <div class="contents">
-      <form>
-    </div>
-    <div class="add-image">
-      <form>
-    </div>
+    
   </div>
-  <div class="post-bottom">
-    <訪問日>
-    <form>
-  </div>
+  
 </div>

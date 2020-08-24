@@ -14,4 +14,26 @@ class Restaurant < ApplicationRecord
   has_many :reviews
   has_one_attached :image
 
+  validates :reserve_id, numericality: { other_than: 1 }
+  validates :budget_dinner_id, numericality: { other_than: 1 }
+  validates :budgetlunch_id, numericality: { other_than: 1 }
+  validates :private_room_id, numericality: { other_than: 1 }
+  validates :charter_id, numericality: { other_than: 1 }
+  validates :smoking_id, numericality: { other_than: 1 }
+  validates :drink_id, numericality: { other_than: 1 }
+  validates :food_id, numericality: { other_than: 1 }
+
+  with_options presence: true do
+    validates :name_alias, format: {with: /\A[ァ-ヶー－]+\z/ }
+    validates :tel, format: {with: /\A\d{11}\z/}
+    validates :tel, length: {maximum: 11}
+    validates :name
+    validates :about
+    validates :prefecture
+    validates :city_address
+    validates :genre
+    validates :scene
+    validates :feature
+  end
+
 end

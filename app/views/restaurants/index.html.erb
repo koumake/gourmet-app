@@ -8,7 +8,9 @@
     <p class="service">
     掲載店舗数・写真数NO.1
     </p>
-
+    <%= image_tag "header-image.jpg", class:"header-image" %>
+    
+    <div class = "header-contents">
     <% if user_signed_in? %>
         <li><%= link_to current_user.nickname, "#", class: "user-nickname"%> </li> 
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%> </li> 
@@ -16,18 +18,24 @@
       <li><%= link_to 'ログイン', "#", class: "login" %></li>
       <li><%= link_to '新規登録', "#", class: "sign-up" %></li>
     <% end %>
+    </div>
   </div>
   <div class="restaurant-search">
     <div class="input-search">
       <%= search_form_for @p, url: search_restaurants_path do |f| %>
-        <%= f.label :about_cont, '入力欄' %>
+        <h2>
+        キーワードから探す
+        </h2>
+        <%= f.label :about_cont, '検索欄' %>
+        <br>
         <%= f.search_field :about_cont %>
         <br>
         <%= f.submit '検索' %>
         <h2>
          エリアから探す
         </h2>
-        <%= f.label :area, 'エリア' %>
+        <%= f.label :area, 'エリア一覧' %>
+        <br>
         <%= f.radio_button :area_eq, '銀座・新橋・有楽町' %>
         銀座・新橋・有楽町
         <%= f.radio_button :area_eq, '池袋' %>
@@ -52,25 +60,29 @@
         吉祥寺・三鷹
         <%= f.radio_button :area_eq, '町田・稲城' %>
         町田・稲城
+        <br>
         <%= f.submit '検索' %>
         <h2 class="search-title">
          ジャンルから探す
         </h2>
-        <%= f.label :genre_eq, 'ジャンルから探す'%>
+        <%= f.label :genre_eq, 'ジャンル一覧'%>
+        <br>
         <%= f.collection_select :genre_eq, @restaurant_genre, :genre, :genre, include_blank: '指定なし' %>
         <br>
         <%= f.submit '検索' %>
         <h2 class="service-title">
         利用シーンから探す
         </h2>
-        <%= f.label :scene_cont, '利用シーンから探す'%>
+        <%= f.label :scene_cont, '利用シーン一覧'%>
+        <br>
         <%= f.collection_select :scene_cont, @restaurant_scene, :scene, :scene, include_blank: '指定なし' %>
         <br>
         <%= f.submit '検索' %>
         <h2 class="service-title">
         特徴から探す
         </h2>
-        <%= f.label :feature_cont, '特徴から探す'%>
+        <%= f.label :feature_cont, '特徴一覧'%>
+        <br>
         <%= f.collection_select :feature_cont, @restaurant_feature, :feature, :feature, include_blank: '指定なし' %>
         <br>
         <%= f.submit '検索' %>

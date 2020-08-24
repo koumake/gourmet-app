@@ -13,8 +13,15 @@
         </div>
         <div class="content">
           <%= image_tag result.image.variant(resize:'500x500'), class: 'message-image' if result.image.attached? %>
-          <%= result.about %>
-          <%= link_to "口コミ", "#" %>
+          <table class="detail-table">
+            <tr>
+              <th class="detail-item">店の紹介</th>
+              <td class="detail-value"><%= result.about %></td>
+            </tr>
+          </table>
+          <div class="restaurant-review" >
+            <%= link_to "口コミをみる", "/restaurants/#{result.id}/reviews" %>
+          </div>
         </div>
         <div class="reservation">
           <%= link_to "予約する", "/restaurants/#{result.id}/reservations/new" %>

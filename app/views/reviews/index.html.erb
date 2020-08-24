@@ -1,3 +1,5 @@
 <div class="reviews">
-  <%= render partial: 'review', collection: @reviews %>
+  <% @reviews.each do |review| %>
+    <%= render partial: 'review', collection: @reviews %>
+  <% end %>
 </div>

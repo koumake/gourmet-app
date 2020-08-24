@@ -8,18 +8,26 @@
       <span>来店日</span>
       <%= f.label :date_time %>
       <%= f.datetime_select :date_time %>
-      <span>人数</span>
-      <%= f.text_area :number, placeholder:"例（3人）"%>
-      <span>姓</span>
-      <%= f.text_area :lastname %>
-      <span>名</span>
-      <%= f.text_area :firstname %>
-      <span>姓（カナ）</span>
-      <%= f.text_area :lastname_kana %>
-      <span>名（カナ）</span>
-      <%= f.text_area :firstname_kana %>
-      <span>要望</span>
-      <%= f.text_area :request %>
+      <div class="people-number">
+        <span>人数</span>
+        <%= f.text_area :number, placeholder:"例（3人）"%>
+      </div>
+      <div class="name-form">  
+        <span>姓</span>
+        <%= f.text_area :lastname %>
+        <span>名</span>
+        <%= f.text_area :firstname %>
+      </div>
+      <div class="name-kanaform">
+        <span>姓（カナ）</span>
+        <%= f.text_area :lastname_kana %>
+        <span>名（カナ）</span>
+        <%= f.text_area :firstname_kana %>
+      </div>
+      <div class="request-form">  
+        <span>要望</span>
+        <%= f.text_area :request %>
+      </div>
       <%= f.submit "予約する" %>
     </div>
       

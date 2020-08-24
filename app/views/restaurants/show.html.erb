@@ -3,37 +3,49 @@
   </header>
   <div class="restaurant-about-main">
     <div class="restaurant-about-title">
-      <%= @restaurant.name %>
-      店のジャンル
-      <%= @restaurant.genre %>
-      ディナーの予算
-      <%= @restaurant.budget_dinner_id %>
-      ランチの予算
-      <%= @restaurant.budget_lunch_id %>
-      定休日
-      <%= @restaurant.holiday %>
+      <div class="restaurant-name">
+        <%= @restaurant.name %>
+      </div>
+      <div class="restaurant-image">  
+        <%= image_tag @restaurant.image.variant(resize:'500x500'), class: 'message-image' if @restaurant.image.attached? %>
+      </div> 
+      <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">店のジャンル</th>
+          <td class="detail-value"><%= @restaurant.genre %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">ディナーの予算</th>
+          <td class="detail-value"><%= @restaurant.budget_dinner_id %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">ランチの予算</th>
+          <td class="detail-value"><%= @restaurant.budget_lunch_id %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">定休日</th>
+          <td class="detail-value"><%= @restaurant.holiday %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">店の特徴</th>
+          <td class="detail-value"><%= @restaurant.feature %></td>
+        </tr>
+      </tbody>
+    </table>
     </div>
     <div class="restaurant-about-content">
          
-      <p>店について</p>
-      <ul class="restaurant-informations">
-        <li class="restaurant-feature">
-          <%= @restaurant.feature %>
-        </li>
-        <li class="restaurant-image">
-          <%= image_tag @restaurant.image.variant(resize:'500x500'), class: 'message-image' if @restaurant.image.attached? %>
-        </li>
-        <li class="restaurant-review">
-          <%= link_to "口コミを投稿する", " /restaurants/#{@restaurant.id}/reviews/new" %>
-          <% @reviews.each do |review| %>
+      <%= link_to "口コミを投稿する", " /restaurants/#{@restaurant.id}/reviews/new" %>
+      <div class="review-all">
+        <% @reviews.each do |review| %>
           <%= render partial: "reviews/review", locals: {review: review} %>
-          <% end %>
-          
-        </li>
-      </ul>
+        <% end %>
+      </div>
       <div class="restaurant-details">
          <%= link_to "予約する", "/restaurants/#{@restaurant.id}/reservations/new" %>
       </div>
+      
     </div>
   </div>
   <footer>

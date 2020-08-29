@@ -34,6 +34,7 @@ class Restaurant < ApplicationRecord
     validates :genre
     validates :scene
     validates :feature
+    validates :area
   end
 
 end

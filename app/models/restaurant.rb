@@ -16,7 +16,7 @@ class Restaurant < ApplicationRecord
 
   validates :reserve_id, numericality: { other_than: 1 }
   validates :budget_dinner_id, numericality: { other_than: 1 }
-  validates :budgetlunch_id, numericality: { other_than: 1 }
+  validates :budget_lunch_id, numericality: { other_than: 1 }
   validates :private_room_id, numericality: { other_than: 1 }
   validates :charter_id, numericality: { other_than: 1 }
   validates :smoking_id, numericality: { other_than: 1 }
@@ -34,6 +34,7 @@ class Restaurant < ApplicationRecord
     validates :genre
     validates :scene
     validates :feature
+    validates :area
   end
 
 end

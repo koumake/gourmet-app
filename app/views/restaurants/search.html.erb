@@ -12,7 +12,7 @@
           <%= link_to result.name, restaurant_path(result) %>
         </div>
         <div class="content">
-          <%= image_tag result.image.variant(resize:'500x500'), class: 'message-image' if result.image.attached? %>
+          <%= image_tag result.image.variant(resize:'300x300'), class: 'message-image' if result.image.attached? %>
           <table class="detail-table">
             <tr>
               <th class="detail-item">店の紹介</th>

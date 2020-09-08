@@ -7,7 +7,7 @@
         <%= @restaurant.name %>
       </div>
       <div class="restaurant-image">  
-        <%= image_tag @restaurant.image.variant(resize:'500x500'), class: 'message-image' if @restaurant.image.attached? %>
+        <%= image_tag @restaurant.image.variant(resize:'400x400'), class: 'message-image' if @restaurant.image.attached? %>
       </div> 
       <table class="detail-table">
       <tbody>

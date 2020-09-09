@@ -33,7 +33,7 @@ Things you may want to cover:
 * ユーザーが自分の店を登録できる
 
 ## URL
-https://github.com/koumake/gourmet-app
+https://gourmet-app.herokuapp.com/
 ## テスト用アカウント
 * email…bbbb@2222
 * passward…bbbb2222

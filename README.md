@@ -39,7 +39,7 @@ https://gourmet-app.herokuapp.com/
 * passward…bbbb2222
 ## このアプリの利用方法
 #### 店を出店する手順
-* https://gourmet-app.herokuapp.com/restaurants/newに<br>アクセスし、必要情報を記入して送信ボタンをクリックする
+* https://gourmet-app.herokuapp.com/restaurants/new<br>にアクセスし、必要情報を記入して送信ボタンをクリックする
 #### 店を検索し予約する手順
 * トップページから「ジャンル」「エリア」など自分が探したい<br>条件を選ぶ(1つでも複数でも可)
 * 検索結果の店舗一覧から行きたい店の「予約する」ボタンを<br>クリックする(店名をクリックすると店舗詳細ページへ飛ぶ)
